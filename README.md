@@ -28,7 +28,7 @@
 
 # 📖 [Vet-Clinic] <a name="about-project"></a>
 
-**[The Vet Clinic]** relational Database is the foundation for keeping records of animals that have received treatment at the clinic.
+**[The Vet Clinic]** relational database is the foundation for keeping records of animals that have received treatment at the clinic.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -121,6 +121,6 @@ I would like to express my sincere thanks to Microverse for providing us with th
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/mryeminthu/vet-_clinic/blob/dev/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
