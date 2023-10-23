@@ -28,7 +28,7 @@
 
 # 📖 [Vet-Clinic] <a name="about-project"></a>
 
-**[The Vet Clinic]** relational Database is the foundation for keeping records of animals that have received treatment at the clinic.
+**[The Vet Clinic]** relational database is the foundation for keeping records of animals that have received treatment at the clinic.
 
 ## 🛠 Built With <a name="built-with"></a>
 
