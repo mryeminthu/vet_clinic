@@ -79,5 +79,12 @@ LEFT JOIN animals ON species.id = animals.species_id
 GROUP BY species.name
 ORDER BY "Count Animals" DESC;
 
+SELECT animals.name AS "Animal", species.name AS "Type", owners.full_name AS owner
+FROM species
+JOIN animals ON animals.species_id = species.id
+JOIN owners ON animals.owner_id = owners.id
+WHERE species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell';
+
+
 
 
