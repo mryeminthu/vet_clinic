@@ -56,5 +56,48 @@ FROM animals
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-01-01'
 GROUP BY species;
 
+SELECT animals.name
+FROM animals
+JOIN owners 
+ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+
+SELECT animals.name AS Animal, species.name AS Type
+FROM animals
+JOIN species
+ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+SELECT name, full_name
+FROM animals
+FULL JOIN owners
+ON animals.owner_id = owners.id;
+
+SELECT species.name, COUNT(animals.id) AS "Count Animals"
+FROM species
+LEFT JOIN animals ON species.id = animals.species_id
+GROUP BY species.name
+ORDER BY "Count Animals" DESC;
+
+SELECT animals.name AS "Animal", species.name AS "Type", owners.full_name AS owner
+FROM species
+JOIN animals ON animals.species_id = species.id
+JOIN owners ON animals.owner_id = owners.id
+WHERE species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell';
+
+SELECT animals.name, owners.full_name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE animals.escape_attempts = 0 AND  owners.full_name = 'Dean Winchester';
+
+SELECT COUNT(animals.owner_id) AS "Count Animals", owners.full_name
+FROM animals JOIN owners
+ON animals.owner_id = owners.id
+GROUP BY owners.full_name
+ORDER BY "Count Animals" DESC
+LIMIT 1;
+
+
+
 
 
