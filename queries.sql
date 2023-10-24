@@ -105,5 +105,9 @@ WHERE v.name = 'William Tatcher'
 ORDER BY vi.visit_date DESC
 LIMIT 1;
 
+SELECT COUNT(DISTINCT vi.animal_name) AS animals_seen
+FROM visits AS vi
+WHERE vi.vets_name = 'Stephanie Mendez';
+
 
 
