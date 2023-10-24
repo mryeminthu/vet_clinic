@@ -26,3 +26,9 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
  SELECT * from animals;
  COMMIT;
  SELECT * from animals;
+
+BEGIN TRANSACTION;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
