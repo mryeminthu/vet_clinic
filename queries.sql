@@ -97,7 +97,13 @@ GROUP BY owners.full_name
 ORDER BY "Count Animals" DESC
 LIMIT 1;
 
-
+SELECT v.name AS vet_name, a.name AS animal_name
+FROM visits AS vi
+JOIN vets AS v ON vi.vets_name = v.name
+JOIN animals AS a ON vi.animal_name = a.name
+WHERE v.name = 'William Tatcher'
+ORDER BY vi.visit_date DESC
+LIMIT 1;
 
 
 
