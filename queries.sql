@@ -73,4 +73,11 @@ FROM animals
 FULL JOIN owners
 ON animals.owner_id = owners.id;
 
+SELECT species.name, COUNT(animals.id) AS "Count Animals"
+FROM species
+LEFT JOIN animals ON species.id = animals.species_id
+GROUP BY species.name
+ORDER BY "Count Animals" DESC;
+
+
 
