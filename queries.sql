@@ -90,6 +90,14 @@ FROM animals
 JOIN owners ON animals.owner_id = owners.id
 WHERE animals.escape_attempts = 0 AND  owners.full_name = 'Dean Winchester';
 
+SELECT COUNT(animals.owner_id) AS "Count Animals", owners.full_name
+FROM animals JOIN owners
+ON animals.owner_id = owners.id
+GROUP BY owners.full_name
+ORDER BY "Count Animals" DESC
+LIMIT 1;
+
+
 
 
 
