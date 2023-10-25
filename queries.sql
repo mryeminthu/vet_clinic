@@ -133,3 +133,8 @@ JOIN vets AS v ON vi.vets_name = v.name
 WHERE v.name = 'Maisy Smith'
 ORDER BY vi.visit_date ASC
 LIMIT 1;
+
+SELECT vi.animal_name, vi.vets_name AS vet_name, vi.visit_date
+FROM visits AS vi
+ORDER BY vi.visit_date DESC
+LIMIT 1;
