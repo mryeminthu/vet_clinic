@@ -120,3 +120,9 @@ JOIN animals AS a ON vi.animal_name = a.name
 WHERE v.name = 'Stephanie Mendez'
 AND vi.visit_date >= '2020-04-01'
 AND vi.visit_date <= '2020-08-30';
+
+SELECT animal_name, COUNT(*) AS num_visits
+FROM visits
+GROUP BY animal_name
+ORDER BY num_visits DESC
+LIMIT 1;
