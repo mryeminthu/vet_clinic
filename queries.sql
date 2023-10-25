@@ -138,3 +138,8 @@ SELECT vi.animal_name, vi.vets_name AS vet_name, vi.visit_date
 FROM visits AS vi
 ORDER BY vi.visit_date DESC
 LIMIT 1;
+
+SELECT COUNT(*) AS num_mismatched_visits
+FROM visits AS vi
+JOIN specializations AS s ON vi.vets_name = s.vet_name AND vi.animal_name = s.species_name
+WHERE s.vet_id IS NULL;
