@@ -99,15 +99,15 @@ LIMIT 1;
 
 SELECT v.name AS vet_name, a.name AS animal_name
 FROM visits AS vi
-JOIN vets AS v ON vi.vets_name = v.name
-JOIN animals AS a ON vi.animal_name = a.name
+JOIN vets AS v ON vi.vet_id = v.id
+JOIN animals AS a ON vi.animal_id = a.id
 WHERE v.name = 'William Tatcher'
 ORDER BY vi.visit_date DESC
 LIMIT 1;
 
 SELECT COUNT(DISTINCT vi.animal_name) AS animals_seen
 FROM visits AS vi
-WHERE vi.vets_name = 'Stephanie Mendez';
+WHERE vi.vet_id = 'Stephanie Mendez';
 
 SELECT v.name AS vet_name, s.species_name AS specialty
 FROM vets AS v
@@ -115,8 +115,8 @@ LEFT JOIN specializations AS s ON v.id = s.vet_id;
 
 SELECT a.name AS animal_name, vi.visit_date
 FROM visits AS vi
-JOIN vets AS v ON vi.vets_name = v.name
-JOIN animals AS a ON vi.animal_name = a.name
+JOIN vets AS v ON vi.vet_id = v.id
+JOIN animals AS a ON vi.animal_id = a.id
 WHERE v.name = 'Stephanie Mendez'
 AND vi.visit_date >= '2020-04-01'
 AND vi.visit_date <= '2020-08-30';
@@ -129,25 +129,25 @@ LIMIT 1;
 
 SELECT vi.animal_name, vi.visit_date
 FROM visits AS vi
-JOIN vets AS v ON vi.vets_name = v.name
+JOIN vets AS v ON vi.vet_id = v.id
 WHERE v.name = 'Maisy Smith'
 ORDER BY vi.visit_date ASC
 LIMIT 1;
 
-SELECT vi.animal_name, vi.vets_name AS vet_name, vi.visit_date
+SELECT vi.animal_name, vi.vet_id AS vet_name, vi.visit_date
 FROM visits AS vi
 ORDER BY vi.visit_date DESC
 LIMIT 1;
 
-SELECT COUNT(*) AS num_mismatched_visits
+SELECT COUNT(*) AS num_mismatched visits
 FROM visits AS vi
-JOIN specializations AS s ON vi.vets_name = s.vet_name AND vi.animal_name = s.species_name
+JOIN specializations AS s ON vi.vet_id = s.vet_id AND vi.animal_name = s.species_name
 WHERE s.vet_id IS NULL;
 
 SELECT s.species_name, COUNT(*) AS num_visits
 FROM visits AS vi
-JOIN specializations AS s ON vi.vets_name = s.vet_name
-WHERE vi.vets_name = 'Maisy Smith'
+JOIN specializations AS s ON vi.vet_id = s.vet_id
+WHERE vi.vet_id = 'Maisy Smith'
 GROUP BY s.species_name
 ORDER BY num_visits DESC
 LIMIT 1;
