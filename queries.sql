@@ -143,3 +143,11 @@ SELECT COUNT(*) AS num_mismatched_visits
 FROM visits AS vi
 JOIN specializations AS s ON vi.vets_name = s.vet_name AND vi.animal_name = s.species_name
 WHERE s.vet_id IS NULL;
+
+SELECT s.species_name, COUNT(*) AS num_visits
+FROM visits AS vi
+JOIN specializations AS s ON vi.vets_name = s.vet_name
+WHERE vi.vets_name = 'Maisy Smith'
+GROUP BY s.species_name
+ORDER BY num_visits DESC
+LIMIT 1;
