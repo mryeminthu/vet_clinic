@@ -126,3 +126,10 @@ FROM visits
 GROUP BY animal_name
 ORDER BY num_visits DESC
 LIMIT 1;
+
+SELECT vi.animal_name, vi.visit_date
+FROM visits AS vi
+JOIN vets AS v ON vi.vets_name = v.name
+WHERE v.name = 'Maisy Smith'
+ORDER BY vi.visit_date ASC
+LIMIT 1;
